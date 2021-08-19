@@ -1,0 +1,24 @@
+{
+    "name": "EQUP_CYPRESS-FRAMEWORK",
+    "version": "00.00.01", 
+    "description": "EQUP_ YPRESS FRAMEWORK", 
+    "main": "index.js",
+    "dependencies": {
+        "cypress-file-upload": "^4.1.1.",
+        "cypress-iframe" : "^1.0.1"
+    },
+    "devDependecies": {
+        "cypress": "6.3.0"
+    },
+    
+
+    "scripts": {
+
+        "test-qa-run": "CYPRESS_BASE_URL=https://qa.equipbehavioralhealth.com/login CYPRESS_ENVIRONMENT_NAME=qa cypress run --browser chrome --spec ./cypress/integration/admin/**/*.js",
+        "test-qa-open": "CYPRESS_BASE_URL=https://qa.equipbehavioralhealth.com/login CYPRESS_ENVIRONMENT_NAME=qa ./node_modules/.bin/cypress open"
+
+    },
+    "author": "Chandhu",
+    "License": "EHISC"
+
+}

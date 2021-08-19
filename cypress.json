@@ -1,0 +1,17 @@
+{
+    "watchForFileChanges": false,
+    "integrationFolder": "cypress/integration/",
+    "baseURL": "https://qa.equipbehavioralhealth.com/login",
+    "numTestKeptInMemory": 3,
+    "reporter": "junit",
+    "projectID": "uznouc",
+    "defaultCommandTimeout": 10000,
+    "chromeWebSecurity": false,
+    "viewportWidth": 1600,
+    "viewportHeight": 990,
+    "retries": {"runMode": 2, "openMode": 1}
+
+
+
+
+}
