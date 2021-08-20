@@ -54,7 +54,7 @@ Cypress.LocalStorage.clear = function () {
 
 Cypress.Commands.add('login', (loginType) => {
 
-        cy.visit('https://qa.equipbehavioralhealth.com/login')
+        cy.visit('https://qa.google.com/login')
         // cy.get('#email_input').type("admin@test.com")
         // cy.get('#password_input').type("letmein")
         // cy.get('.css-1umx0cd-MuiBox').type("{enter}{enter")
@@ -65,8 +65,8 @@ Cypress.Commands.add('login', (loginType) => {
             cy.get('#password_input').type("letmein")
             cy.get('.css-1umx0cd-MuiBox').type("{enter}{enter") 
         }else if ('therapist') {
-            cy.get('#email_input').type("chandhu@equip.health")
-            cy.get('#password_input').type("!Charlo1")
+            cy.get('#email_input').type("chandhu@test.com")
+            cy.get('#password_input').type("letmein")
             cy.get('.css-1umx0cd-MuiBox').type("{enter}{enter")
         }
         
