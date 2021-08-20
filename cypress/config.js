@@ -12,24 +12,24 @@ const config = getEnvironmentVariable('ENVIRONMENT_NAME', 'test');
 
 
 const QA_CONFIG = {
-    URL = 'https://qa.google.com/login',
-    ADMIN_USER_NAME = 'admin@test.com',
-    ADMIN_USER_PSWD = 'letmein',
-    PROVIDER_USER_NAME = 'qa_provider@test.com',
-    PROVIDER_USER_PASSWORD = 'providerpswd',
-    THERAPIST_USER_NAME = 'qa_therapist@test.com.',
-    THERAPIST_USER_PASSWORD = 'therapistpswd'
+    URL : 'https://qa.google.com/login',
+    ADMIN_USER_NAME : 'admin@test.com',
+    ADMIN_USER_PSWD : 'letmein',
+    PROVIDER_USER_NAME : 'qa_provider@test.com',
+    PROVIDER_USER_PASSWORD : 'providerpswd',
+    THERAPIST_USER_NAME : 'qa_therapist@test.com.',
+    THERAPIST_USER_PASSWORD : 'therapistpswd'
 
 }
 
 const DEV_CONFIG = {
-    URL = 'https://dev.equipbehavioralhealth.com/login',
-    ADMIN_USER_NAME = 'dev_admin@test.com',
-    ADMIN_USER_PSWD = 'letmein',
-    PROVIDER_USER_NAME = 'dev_provider@test.com',
-    PROVIDER_USER_PASSWORD = 'providerpswd',
-    THERAPIST_USER_NAME = 'dev_therapist@test.com',
-    THERAPIST_USER_PASSWORD = 'therapistpswd'
+    URL : 'https://dev.equipbehavioralhealth.com/login',
+    ADMIN_USER_NAME : 'dev_admin@test.com',
+    ADMIN_USER_PSWD : 'letmein',
+    PROVIDER_USER_NAME : 'dev_provider@test.com',
+    PROVIDER_USER_PASSWORD : 'providerpswd',
+    THERAPIST_USER_NAME : 'dev_therapist@test.com',
+    THERAPIST_USER_PASSWORD : 'therapistpswd'
     
 }
 
