@@ -1,7 +1,7 @@
 {
     "watchForFileChanges": false,
     "integrationFolder": "cypress/integration/",
-    "baseURL": "https://qa.google.com/login",
+    "baseUrl": "https://qa.equipbehavioralhealth.com/login",
     "numTestKeptInMemory": 3,
     "reporter": "junit",
     "projectID": "uznouc",
@@ -10,8 +10,4 @@
     "viewportWidth": 1600,
     "viewportHeight": 990,
     "retries": {"runMode": 2, "openMode": 1}
-
-
-
-
 }
