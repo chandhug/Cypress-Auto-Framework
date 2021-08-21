@@ -2,15 +2,19 @@
 import {
     ADMIN_USER_NAME,
     ADMIN_USER_PSWD,
-    APP_URL
+    URL,
+    PROVIDER_USER_NAME,
+    PROVIDER_USER_PASSWORD,
+    THERAPIST_USER_NAME,
+    THERAPIST_USER_PASSWORD
 } from '../config'
+// import 'cypress-file-upload'
 
 import { randomNumber } from '../functions'
 
 const randomNo = randomNumber(5);
 
-
-
+const app_url = URL
 
 
 
@@ -53,22 +57,44 @@ Cypress.LocalStorage.clear = function () {
 /* Adding Commands to Cypress */
 
 Cypress.Commands.add('login', (loginType) => {
+    
 
-        cy.visit('https://qa.google.com/login')
-        // cy.get('#email_input').type("admin@test.com")
-        // cy.get('#password_input').type("letmein")
-        // cy.get('.css-1umx0cd-MuiBox').type("{enter}{enter")
+//Not working - Do not use it
+    // cy.visit(app_url)
+    // if(loginType == 'admin'){
+    //     cy.get('#email_input').type(ADMIN_USER_NAME)
+    //     cy.get('#password_input').type(ADMIN_USER_PSWD)
+    //     cy.get('.css-1umx0cd-MuiBox').type("{enter}{enter") 
+    // }else if (loginType == 'therapist') {
+    //     cy.get('#email_input').type(PROVIDER_USER_NAME)
+    //     cy.get('#password_input').type(PROVIDER_USER_NAME)
+    //     cy.get('.css-1umx0cd-MuiBox').type("{enter}{enter")
+    // }
 
 
-        if(loginType == 'admin'){
-            cy.get('#email_input').type("admin@test.com")
-            cy.get('#password_input').type("letmein")
-            cy.get('.css-1umx0cd-MuiBox').type("{enter}{enter") 
-        }else if ('therapist') {
-            cy.get('#email_input').type("chandhu@test.com")
-            cy.get('#password_input').type("letmein")
-            cy.get('.css-1umx0cd-MuiBox').type("{enter}{enter")
-        }
+    //Using cypress.env.json :
+    cy.visit(Cypress.env('url'));
+    if(loginType == 'admin'){
+        cy.get('#email_input').type(Cypress.env('admin_user_name'))
+        cy.get('#password_input').type(Cypress.env('admin_user_pswd'))
+        cy.get('.css-1umx0cd-MuiBox').type("{enter}{enter")
+    }else if (loginType == 'provider') {
+        cy.get('#email_input').type(Cypress.env('provider_user_name'))
+        cy.get('#password_input').type(Cypress.env('provider_user_pswd'))
+        cy.get('.css-1umx0cd-MuiBox').type("{enter}{enter")
+    }else if (loginType == 'therapist') {
+        cy.get('#email_input').type(Cypress.env('therapist_user_name'))
+        cy.get('#password_input').type(Cypress.env('therapist_user_pswd'))
+        cy.get('.css-1umx0cd-MuiBox').type("{enter}{enter")
+    }else if (loginType == 'patient') {
+        cy.get('#email_input').type(Cypress.env('patient_user_name'))
+        cy.get('#password_input').type(Cypress.env('patient_user_pswd'))
+        cy.get('.css-1umx0cd-MuiBox').type("{enter}{enter")
+    }else if (loginType == 'carer') {
+        cy.get('#email_input').type(Cypress.env('carer_user_name'))
+        cy.get('#password_input').type(Cypress.env('carer_user_pswd'))
+        cy.get('.css-1umx0cd-MuiBox').type("{enter}{enter")
+    }
         
 
 });
