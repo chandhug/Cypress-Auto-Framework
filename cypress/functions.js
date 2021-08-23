@@ -1,15 +1,29 @@
 
-export function randonPasswrod(length){
+export function randomPassword(length){
     let result = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@$';
     const characterLength = characters.length;
-    for(let i = 0; i < characterLength; i++){
-        result +   `${characters.charAt(
+    for(let i = 0; i <= length; i++){
+        result +=  `${characters.charAt(
             Math.floor(Math.random() * characterLength),
             )}*1`;
 
     };
     return result;
+};
+
+
+export function randomText(length){
+    let randomString = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    const characterLength = characters.length;
+    for(let i = 0; i <= length; i++){
+        randomString +=   `${characters.charAt(
+            Math.floor(Math.random() * characterLength),
+            )}`;
+
+    };
+    return randomString;
 };
 
 export function randomNumber(max){

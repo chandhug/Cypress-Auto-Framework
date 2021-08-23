@@ -4,17 +4,17 @@ import {
     ADMIN_USER_PSWD,
     URL,
     PROVIDER_USER_NAME,
-    PROVIDER_USER_PASSWORD,
+    PROVIDER_USER_PSWD,
     THERAPIST_USER_NAME,
-    THERAPIST_USER_PASSWORD
-} from '../config'
+    THERAPIST_USER_PSWD
+} from '../config.js';
 // import 'cypress-file-upload'
 
-import { randomNumber } from '../functions'
+import { randomNumber } from '../functions';
 
 const randomNo = randomNumber(5);
 
-const app_url = URL
+
 
 
 
@@ -60,49 +60,71 @@ Cypress.Commands.add('login', (loginType) => {
     
 
 //Not working - Do not use it
-    // cy.visit(app_url)
+    // cy.visit('/')
     // if(loginType == 'admin'){
+    //     cy.log(ADMIN_USER_NAME)
     //     cy.get('#email_input').type(ADMIN_USER_NAME)
     //     cy.get('#password_input').type(ADMIN_USER_PSWD)
     //     cy.get('.css-1umx0cd-MuiBox').type("{enter}{enter") 
     // }else if (loginType == 'therapist') {
     //     cy.get('#email_input').type(PROVIDER_USER_NAME)
-    //     cy.get('#password_input').type(PROVIDER_USER_NAME)
+    //     cy.get('#password_input').type(PROVIDER_USER_PSWD)
     //     cy.get('.css-1umx0cd-MuiBox').type("{enter}{enter")
     // }
 
-
+    const envName = Cypress.env('ENVIRONMENT_NAME');
+    cy.log('Running Script in Environment  ' + envName);
+    cy.log('Running Login Script')
     //Using cypress.env.json :
-    cy.visit(Cypress.env('url'));
-    if(loginType == 'admin'){
-        cy.get('#email_input').type(Cypress.env('admin_user_name'))
-        cy.get('#password_input').type(Cypress.env('admin_user_pswd'))
-        cy.get('.css-1umx0cd-MuiBox').type("{enter}{enter")
-    }else if (loginType == 'provider') {
-        cy.get('#email_input').type(Cypress.env('provider_user_name'))
-        cy.get('#password_input').type(Cypress.env('provider_user_pswd'))
-        cy.get('.css-1umx0cd-MuiBox').type("{enter}{enter")
-    }else if (loginType == 'therapist') {
-        cy.get('#email_input').type(Cypress.env('therapist_user_name'))
-        cy.get('#password_input').type(Cypress.env('therapist_user_pswd'))
-        cy.get('.css-1umx0cd-MuiBox').type("{enter}{enter")
-    }else if (loginType == 'patient') {
-        cy.get('#email_input').type(Cypress.env('patient_user_name'))
-        cy.get('#password_input').type(Cypress.env('patient_user_pswd'))
-        cy.get('.css-1umx0cd-MuiBox').type("{enter}{enter")
-    }else if (loginType == 'carer') {
-        cy.get('#email_input').type(Cypress.env('carer_user_name'))
-        cy.get('#password_input').type(Cypress.env('carer_user_pswd'))
-        cy.get('.css-1umx0cd-MuiBox').type("{enter}{enter")
+
+    switch(envName){
+        case('qa'): {
+        cy.visit(Cypress.env('url'))
+        // cy.wait('#email_input')
+        cy.wait(3000)
+        if(loginType == 'admin'){
+            cy.get('#email_input').type(Cypress.env('admin_user_name'))
+            cy.get('#password_input').type(Cypress.env('admin_user_pswd'))
+            cy.get('.css-1umx0cd-MuiBox').type("{enter}{enter")
+        }else if (loginType == 'provider') {
+            cy.get('#email_input').type(Cypress.env('provider_user_name'))
+            cy.get('#password_input').type(Cypress.env('provider_user_pswd'))
+            cy.get('.css-1umx0cd-MuiBox').type("{enter}{enter")
+        }else if (loginType == 'therapist') {
+            cy.get('#email_input').type(Cypress.env('therapist_user_name'))
+            cy.get('#password_input').type(Cypress.env('therapist_user_pswd'))
+            cy.get('.css-1umx0cd-MuiBox').type("{enter}{enter")
+        }else if (loginType == 'patient') {
+            cy.get('#email_input').type(Cypress.env('petient_user_name'))
+            cy.get('#password_input').type(Cypress.env('patient_user_pswd'))
+            cy.get('.css-1umx0cd-MuiBox').type("{enter}{enter")
+        }else if (loginType == 'carer') {
+            cy.get('#email_input').type(Cypress.env('carer_user_name'))
+            cy.get('#password_input').type(Cypress.env('carer_user_pswd'))
+            cy.get('.css-1umx0cd-MuiBox').type("{enter}{enter")
+        }
+        }
+        case('dev'): {
+            
+        }
+        case('uat'): {
+            
+        }
+        default: {
+            
+        }
     }
+    
         
 
 });
 
 
 Cypress.Commands.add('logout', () => {
-
-        cy.get('.MuiAvatar-img').click();
-        cy.get('.MuiList-root > [tabindex="-1"]').click(); 
+    cy.log('Running Logout Script')
+    cy.wait(3000)
+    cy.get('.css-o75ps2-MuiBox > .MuiAvatar-root > .MuiAvatar-img').click()
+    // cy.get('.MuiAvatar-img').click();
+    cy.get('.MuiList-root > [tabindex="-1"]').click(); 
 
 });
