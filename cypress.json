@@ -9,5 +9,7 @@
     "chromeWebSecurity": false,
     "viewportWidth": 1600,
     "viewportHeight": 990,
-    "retries": {"runMode": 2, "openMode": 1}
+    "retries": {"runMode": 2, "openMode": 1},
+    "requestTimeout": 16000,
+    "responseTimeout":  16000
 }
