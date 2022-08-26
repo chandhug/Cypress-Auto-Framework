@@ -14,7 +14,7 @@ const config = Cypress.env('ENVIRONMENT_NAME');
 
 
 const QA_CONFIG = {
-    URL : 'https://qa.equipbehavioralhealth.com/login',
+    URL : 'https://qa.health.com/login',
 
     ADMIN_USER_NAME : 'admin@test.com',
     ADMIN_USER_PSWD : 'letmein',
