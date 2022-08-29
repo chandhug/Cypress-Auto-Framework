@@ -19,28 +19,28 @@ const QA_CONFIG = {
     ADMIN_USER_NAME : 'admin@test.com',
     ADMIN_USER_PSWD : 'letmein',
 
-    PROVIDER_USER_NAME : 'qa_provider@equip.health',
+    PROVIDER_USER_NAME : 'qa_provider@eq.health',
     PROVIDER_USER_PSWD : 'providerpswd',
 
-    THERAPIST_USER_NAME : 'qa_therapist@equip.health',
+    THERAPIST_USER_NAME : 'qa_therapist@eq.health',
     THERAPIST_USER_PSWD : 'therapistpswd',
 
-    PATIENT_USER_NAME : 'qa_therapist@equip.health',
+    PATIENT_USER_NAME : 'qa_therapist@eq.health',
     PATIENT_USER_PSWD : 'therapistpswd',
 
-    CARER_USER_NAME : 'qa_therapist@equip.health',
+    CARER_USER_NAME : 'qa_therapist@eq.health',
     CARER_USER_PSWD : 'therapistpswd'
 
 }
 
 const DEV_CONFIG = {
-    URL : 'https://dev.equipbehavioralhealth.com/login',
-    ADMIN_USER_NAME : 'dev_admin@test.com',
-    ADMIN_USER_PSWD : 'letmein',
-    PROVIDER_USER_NAME : 'dev_provider@equip.health',
-    PROVIDER_USER_PSWD : 'providerpswd',
-    THERAPIST_USER_NAME : 'dev_therapist@equip.health',
-    THERAPIST_USER_PSWD : 'therapistpswd'
+    URL : 'https://dev.health.com/login',
+    ADMIN_USER_NAME : 'dev@test.com',
+    ADMIN_USER_PSWD : 'letme',
+    PROVIDER_USER_NAME : 'provider@eq.health',
+    PROVIDER_USER_PSWD : 'provider',
+    THERAPIST_USER_NAME : 'herapist@eq.health',
+    THERAPIST_USER_PSWD : 'therapist'
     
 }
 
