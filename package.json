@@ -14,8 +14,8 @@
 
     "scripts": {
 
-        "test-qa-run": "CYPRESS_URL=https://qa.equipbehavioralhealth.com/login CYPRESS_ENVIRONMENT_NAME=qa cypress run --browser chrome --spec ./cypress/integration/admin/**/*.js",
-        "test-qa-open": "CYPRESS_URL=https://qa.equipbehavioralhealth.com/login CYPRESS_ENVIRONMENT_NAME=qa ./node_modules/.bin/cypress open"
+        "test-qa-run": "CYPRESS_URL=https://qa.health.com/login CYPRESS_ENVIRONMENT_NAME=qa cypress run --browser chrome --spec ./cypress/integration/admin/**/*.js",
+        "test-qa-open": "CYPRESS_URL=https://qa.health.com/login CYPRESS_ENVIRONMENT_NAME=qa ./node_modules/.bin/cypress open"
 
     },
     "author": "Chandhu",
